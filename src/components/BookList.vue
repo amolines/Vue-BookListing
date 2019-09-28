@@ -3,14 +3,19 @@
     <h1>{{title}}</h1>
     <ul>
       <li v-for="book in books">
-          {{book.title}}:{{book.author}}
+          <book-item :book=book></book-item>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import BookItem from './BookItem';
+
 export default {
+  components: {
+    BookItem,
+  },
   props: {
     name: {
       type: string,
